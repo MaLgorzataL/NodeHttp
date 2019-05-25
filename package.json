@@ -1,0 +1,19 @@
+{
+  "name": "nodehttp",
+  "version": "1.0.0",
+  "description": "Zwracanie pliku .html do klienta lub informacji o bledzie",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "NodeHttp.git"
+  },
+  "keywords": [
+    "zapytanie",
+    "localhost"
+  ],
+  "author": "Malgorzata Lesniak",
+  "license": "ISC"
+}
