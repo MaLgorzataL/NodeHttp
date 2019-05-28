@@ -1,25 +1,22 @@
 var fs = require('fs'); 
 var http = require('http'); //Inicjacja serwera HTTP
-var content;
-
+var data = '';
 var server = http.createServer(function (request, response) {
     response.setHeader("Content-Type", "text/html; charset=utf-8");
-    console.log('Hello');
 
     if (request.method === 'GET' && request.url === '/') {
         fs.readFile('./index.html', 'utf-8', function read(err, data) { //Czyta plik .html
             if (err) {
                 throw err;
             };
-            console.log('Hello');
-            var posbegin = data.indexOf('<body>'); // Wycinamy potrzebny string
+            var posbegin = data.indexOf('<body>'); 
+            posbegin = posbegin+6;   // Wycinamy potrzebny string usuwając znacznik <body>
             var posend = data.indexOf('</body>');
-            data = slice(posbegin,posend);
-            console.log(data);   
+            data = data.slice(posbegin,posend);
+            console.log(data);  
+            
         });
-        
-        response.write('In progress..'); 
-        //'<h1>Zapraszam!</h1><br><img src="https://cdn.pixabay.com/photo/2017/03/15/10/57/bridge-2145846__340.jpg" alt="Zgoda">'
+        response.write(data); 
         response.end();
     } else {
             response.statusCode = 404;
@@ -28,4 +25,4 @@ var server = http.createServer(function (request, response) {
     }
 
 });
-server.listen(9000);
+server.listen(5000);

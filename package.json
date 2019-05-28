@@ -18,6 +18,7 @@
   "author": "Malgorzata Lesniak",
   "license": "ISC",
   "dependencies": {
+    "fs": "0.0.1-security",
     "http": "0.0.0"
   }
 }
